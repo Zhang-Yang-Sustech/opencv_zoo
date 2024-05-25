@@ -1,0 +1,16 @@
+Benchmark:
+  name: "Image Segmentation Benchmark"
+  type: "Segmentation"
+  data:
+    path: "data/image_segmentation"
+    files: ["messi5.jpg", "100040721_1.jpg"]
+    sizes: # [[w1, h1], ...], Omit to run at original scale
+      - [640, 640]
+  metric:
+    warmup: 30
+    repeat: 10
+  backend: "default"
+  target: "cpu"
+
+Model:
+  name: "EfficientSAM"
